@@ -187,7 +187,7 @@ runs:
       shell: bash
 
     - name: Restore PIP packages cache
-      uses: actions/cache/restore@v3
+      uses: ContentSquare/actions-cache/restore@approved-v3
       id: cache
       continue-on-error: true
       with:
@@ -254,7 +254,7 @@ runs:
       shell: bash
 
     - name: Save PIP packages cache
-      uses: actions/cache/save@v3
+      uses: ContentSquare/actions-cache/save@approved-v3
       if: ( success() || failure() ) && ! steps.cache.outputs.cache-hit
       continue-on-error: true
       with:
